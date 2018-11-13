@@ -186,10 +186,10 @@
       var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
       var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
       console.log("您的浏览设备为：");
-      if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
-        console.log("phone");
+      if (bIsIpad || bIsIphoneOs) {
+        console.log("iphone");
       } else {
-        console.log("pc");
+        console.log("pc/android");
         var dom = document.getElementById('J-tip-change-bor');
         dom.style.display = 'none';
       }
