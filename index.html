@@ -173,20 +173,11 @@
     dom.style.display = 'block';
     document.getElementById('J-button').style.display = 'none';
   }
-</script>
-<script type="text/javascript">
-  $(function () {
-    var top;
-    $(window).scroll(function () {
-      top = $(document).scrollTop();
-      if(top > 5){
-        $('.tip').stop(true,false).fadeOut(500);
-      }
-      else{
-        $('.tip').fadeIn(500);
-      }
-    });
-  });
+  if(navigator.Actual_Name == 'Safari'){
+    var dom = document.getElementById('J-tip-change-bor');
+    dom.style.display = 'none';
+    document.getElementById('J-button').style.display = 'block';
+  }
 </script>
         
     </body>
