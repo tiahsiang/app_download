@@ -33,7 +33,7 @@
                 box-sizing:border-box;
                 left: 0;
                 top:0;
-                background: rgba(0,0,0,0.6);
+                background: rgba(0,0,0,0.15);
                 text-align: right;
                 padding: 40px 55px 50px 0;
                 z-index: 1000;
@@ -90,15 +90,11 @@
         if(/Android/i.test(navigator.userAgent)) {
           $('.iphone').css('display','none');
         }
-      })
-    </script>
-    <script>
-      if(navigator.userAgent == 'Safari|webOS'){
-          
-        var dom = $('#J-tip-change-bor');
-        dom.style.display = 'none';
-//         document.getElementById('J-button').style.display = 'block';
+        if(navigator.userAgent == 'Safari|webOS'){
+          $('#J-tip-change-bor').css('display','none');
+//        $('#J-button').css('display','none');
       }
+      })
     </script>
         
     </body>
