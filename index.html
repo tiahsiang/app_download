@@ -85,7 +85,6 @@
         //手机访问
         if(/webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
           $('.android').css('display','none');
-//           $('.tip-change-bor').css('display', 'block');
         }
         if(/Android/i.test(navigator.userAgent)) {
           $('.iphone').css('display','none');
@@ -172,7 +171,6 @@
   }else if(navigator.Actual_Name == 'Safari'){
     var dom = document.getElementById('J-tip-change-bor');
     dom.style.display = 'none';
-
   }
     
   function browserRedirect() {
@@ -188,6 +186,8 @@
       console.log("您的浏览设备为：");
       if (bIsIpad || bIsIphoneOs) {
         console.log("iphone");
+        var dom = document.getElementById('J-tip-change-bor');
+        dom.style.display = 'block';
       } else {
         console.log("pc/android");
         var dom = document.getElementById('J-tip-change-bor');
