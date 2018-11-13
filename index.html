@@ -85,13 +85,13 @@
         //手机访问
         if(/webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
           $('.android').css('display','none');
-//           $('.tip-change-bor').css('display', 'block');
+            $('.tip-change-bor').css('display', 'block');
         }
         if(/Android/i.test(navigator.userAgent)) {
           $('.iphone').css('display','none');
         }
         if(navigator.userAgent == 'Safari|webOS'){
-          $('#J-tip-change-bor').css('display','none');
+          $('.J-tip-change-bor').css('display','none');
 //        $('#J-button').css('display','none');
       }
       })
