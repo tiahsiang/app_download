@@ -165,18 +165,16 @@
     this.Version = Actual_Version;
   }
   browserinfo();
-  // document.write("你使用的浏览器是:" + navigator.userAgent);
-  // document.write("<br>");
-  // document.write("你使用的浏览器是:" + navigator.Actual_Name + ",版本号:" + navigator.Actual_Version);
-  if(navigator.Actual_Name != 'Safari'){
-    var dom = document.getElementById('J-tip-change-bor');
-    dom.style.display = 'block';
+  
+//   if(navigator.Actual_Name != 'Safari'){
+//     var dom = document.getElementById('J-tip-change-bor');
+//     dom.style.display = 'block';
 
-  }else if(navigator.Actual_Name == 'Safari'){
-    var dom = document.getElementById('J-tip-change-bor');
-    dom.style.display = 'none';
+//   }else if(navigator.Actual_Name == 'Safari'){
+//     var dom = document.getElementById('J-tip-change-bor');
+//     dom.style.display = 'none';
     
-  }
+//   }
 </script>
 <script>
     function browserRedirect() {
@@ -191,11 +189,14 @@
       var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
       console.log("您的浏览设备为：");
       if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
-        console.log("phone");
+        console.log("mobile phone");
+      }
+      if (bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+        console.log("android phone");
         var dom = document.getElementById('J-tip-change-bor');
         dom.style.display = 'block';
       } else {
-        console.log("pc");
+        console.log("pc web");
         var dom = document.getElementById('J-tip-change-bor');
         dom.style.display = 'none';
       }
