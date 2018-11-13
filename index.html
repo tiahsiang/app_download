@@ -164,14 +164,6 @@
     this.Version = Actual_Version;
   }
   browserinfo();
-  
-  if(navigator.Actual_Name != 'Safari'){
-    var dom = document.getElementById('J-tip-change-bor');
-    dom.style.display = 'block';
-  }else if(navigator.Actual_Name == 'Safari'){
-    var dom = document.getElementById('J-tip-change-bor');
-    dom.style.display = 'none';
-  }
     
   function browserRedirect() {
       var sUserAgent = navigator.userAgent.toLowerCase();
@@ -195,6 +187,14 @@
       }
     }
     browserRedirect();
+    
+  if(navigator.Actual_Name != 'Safari'){
+    var dom = document.getElementById('J-tip-change-bor');
+    dom.style.display = 'block';
+  }else if(navigator.Actual_Name == 'Safari'){
+    var dom = document.getElementById('J-tip-change-bor');
+    dom.style.display = 'none';
+  }
 </script>
         
         
