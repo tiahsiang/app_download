@@ -61,11 +61,9 @@
       $(function(){
         //手机访问
         if(/webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-          $('body').css('width','130%');
           $('.android').css('display','none');
         }
         if(/Android/i.test(navigator.userAgent)) {
-          $('body').css('width','145%');
           $('.iphone').css('display','none');
         }
       })
