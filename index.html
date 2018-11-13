@@ -85,7 +85,7 @@
         //手机访问
         if(/webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
           $('.android').css('display','none');
-          $('.tip-change-bor').css('display', 'block');
+//           $('.tip-change-bor').css('display', 'block');
         }
         if(/Android/i.test(navigator.userAgent)) {
           $('.iphone').css('display','none');
@@ -93,7 +93,8 @@
       })
     </script>
     <script>
-      if(navigator.Actual_Name == 'Safari|webOS'){
+      if(navigator.userAgent == 'Safari|webOS'){
+          
         var dom = $('#J-tip-change-bor');
         dom.style.display = 'none';
 //         document.getElementById('J-button').style.display = 'block';
