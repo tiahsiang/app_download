@@ -23,8 +23,11 @@
                 color: #fff;
                 border-radius: 19px;
             }
-            .tip-change-bor {position:relative;display: none;}
-            .tip-change-bor .tip{
+            .tip-change-bor {
+                position:relative;
+                display: none;
+            }
+            .tip-change-bor .tip {
                 position: fixed;
                 width:100%;
                 box-sizing:border-box;
@@ -33,7 +36,11 @@
                 background: rgba(0,0,0,0.6);
                 text-align: right;
                 padding: 40px 55px 50px 0;
-                z-index: 9999;
+                z-index: 1000;
+                margin-left: 0;
+            }
+            .tip-change-bor .tip img {
+                height: auto;
             }
         </style>
     </head>
@@ -67,7 +74,7 @@
     </div>
     <div class="tip-change-bor" id="J-tip-change-bor">
         <div class="tip">
-            <img src="./images/tip.png" width="100%" alt="用Safari浏览器打开">
+            <img src="./images/tip.png" width="70%" alt="用Safari浏览器打开">
         </div>
     </div>
 
