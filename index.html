@@ -23,6 +23,17 @@
                 color: #fff;
                 border-radius: 19px;
             }
+            .tip-change-bor {position:relative;display: none;}
+            .tip-change-bor .tip{
+                position: fixed;
+                width:100%;
+                box-sizing:border-box;
+                left: 0;
+                top:0;
+                background: rgba(0,0,0,0.6);
+                text-align: right;
+                padding: 40px 55px 50px 0;
+            }
         </style>
     </head>
     <body>
@@ -42,7 +53,7 @@
                             <h1 class="name wrapper">优盈APP</h1>
                             <div class="release-info">
                                 <!--安卓下载-->
-                                <a class="download_app android" href="#"  style="background:#ee4433;">下载安装</a>
+                                <a class="download_app android" href="#"  style="background:#ee4433;">安卓下载安装</a>
                                 <!--iOS下载-->
                                 <a class="download_app iphone" href="ios.html">下载安装</a>
                             </div>
@@ -53,7 +64,12 @@
             </header>
         </div>
     </div>
-    <div class="mask" style="display:none"></div>
+    <div class="tip-change-bor" id="J-tip-change-bor">
+        <div class="tip">
+            <img src="./images/tip.png" width="70%" alt="">
+        </div>
+        <img src="./images/text.jpg" width="100%" alt="">
+    </div>
 
 
     <script src="js/jquery-1.11.2.min.js"></script>
@@ -62,6 +78,7 @@
         //手机访问
         if(/webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
           $('.android').css('display','none');
+          $('.tip-change-bor').css('display', 'block');
         }
         if(/Android/i.test(navigator.userAgent)) {
           $('.iphone').css('display','none');
