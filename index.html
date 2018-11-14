@@ -8,7 +8,6 @@
         <meta name="MobileOptimized" content="320">
         <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui, user-scalable=no" />
         <meta http-equiv="cleartype" content="on">
-        <link rel="shortcut icon" href="images/favicon.ico" />
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/download.css">
         <style>
@@ -34,7 +33,7 @@
                 box-sizing:border-box;
                 left: 0;
                 top:0;
-                background: rgba(0,0,0,0.15);
+                background: rgba(0,0,0,0.6);
                 text-align: right;
                 padding: 40px 55px 50px 0;
                 z-index: 1000;
@@ -43,6 +42,8 @@
             .tip-change-bor .tip img {
                 height: auto;
             }
+            .button-cont {width: 50%; padding-top: 50%; margin: 0 auto;}
+            .text {color: #636363;text-align: center;padding-top:20px;font-size:18px; }
         </style>
     </head>
     <body>
@@ -61,10 +62,9 @@
                             </div>
                             <h1 class="name wrapper">优盈APP</h1>
                             <div class="release-info">
-                                <!--安卓下载-->
-                                <a class="download_app android" href="https://download.uying.app/android/uying.apk"  style="background:#ee4433;">安卓下载安装</a>
+                                <!--<a class="download_app android" href="https://download.uying.app/android/uying.apk"  style="background:#ee4433;">安卓下载安装</a>-->
                                 <!--iOS下载-->
-                                <a class="download_app iphone" href="ios.html">下载安装</a>
+                                <a class="download_app iphone" href="javascript:;" title="">下载安装</a>
                             </div>
 
                         </div>
@@ -75,23 +75,27 @@
     </div>
     <div class="tip-change-bor" id="J-tip-change-bor">
         <div class="tip">
-            <img src="./images/tips.jpeg" width="70%" alt="用Safari浏览器打开">
+            <img src="./images/tip.png" width="70%" alt="用Safari浏览器打开">
         </div>
+    </div>
+
+    <div class="button-cont" id="J-button">
+        <a class="button" href="itms-services://?action=download-manifest&url=https://download.uying.app/" title="点击下载iPhone安装包">
+            <img src="./images/button-download-a.png" width="100%" alt="">
+        </a>
+        <div class="text">点击按钮，已经开始下载，请返回桌面查看</div>
     </div>
 
 
     <script src="js/jquery-1.11.2.min.js"></script>
-    <script>
-      $(function(){
-        //手机访问
-        if(/webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-          $('.android').css('display','none');
-        }
-        if(/Android/i.test(navigator.userAgent)) {
-          $('.iphone').css('display','none');
-        }
-      })
-    </script>
+
+
+
+
+
+
+
+
 <script>
   function browserinfo() {
     var Browser_Name = navigator.appName;
@@ -164,36 +168,33 @@
     this.Name = Actual_Name;
     this.Version = Actual_Version;
   }
-  browserinfo();  
-    
-  function browserRedirect() {
-      var sUserAgent = navigator.userAgent.toLowerCase();
-      var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
-      var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
-      var bIsMidp = sUserAgent.match(/midp/i) == "midp";
-      var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
-      var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
-      var bIsAndroid = sUserAgent.match(/android/i) == "android";
-      var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
-      var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
-      console.log("您的浏览设备为：");
-      if (bIsIpad || bIsIphoneOs) {
-        console.log("iphone");
-        var dom = document.getElementById('J-tip-change-bor');
-        dom.style.display = 'block';
-      } else {
-        console.log("pc/android");
-        var dom = document.getElementById('J-tip-change-bor');
-        dom.style.display = 'none';
-      }
+
+  browserinfo();
+
+  // document.write("你使用的浏览器是:" + navigator.userAgent);
+  // document.write("<br>");
+  // document.write("你使用的浏览器是:" + navigator.Actual_Name + ",版本号:" + navigator.Actual_Version);
+  if(navigator.Actual_Name != 'Safari'){
+    var dom = document.getElementById('J-tip-change-bor');
+    dom.style.display = 'none';
+    document.getElementById('J-button').style.display = 'none';
+  }
+
+
+
+  function is_weixn(){
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i)=="micromessenger") {
+      var dom = document.getElementById('J-tip-change-bor');
+      dom.style.display = 'block';
+      document.getElementById('J-button').style.display = 'none';
+      return true;
+    } else {
+      return false;
     }
-    browserRedirect();
-    
-    if(navigator.Actual_Name == 'Safari'){
-       var dom = document.getElementById('J-tip-change-bor');
-       dom.style.display = 'none';
-    }
-    
+  }
+
+
 </script>
         
         
