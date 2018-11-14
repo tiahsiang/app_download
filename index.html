@@ -181,7 +181,7 @@
     document.getElementById('J-button').style.display = 'block';
     setTimeout(function () {
       document.getElementsByClassName('.text').innerHtml = "已经开始下载，请返回桌面查看";
-    }, 1500)
+    }, 2000)
   }
 
   function is_weixn(){
@@ -191,9 +191,8 @@
       dom.style.display = 'block';
       document.getElementById('ios-btn').style.display = 'block';
       document.getElementById('J-button').style.display = 'none';
-      return true;
     } else {
-      return false;
+      return false
     }
   }
 </script>
