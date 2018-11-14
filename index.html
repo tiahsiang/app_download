@@ -44,7 +44,7 @@
                 height: auto;
             }
             .button-cont {width: 50%; margin: 0 auto; display: none;}
-            .text {color: #636363; text-align: center; padding-top:20px; font-size:18px;}
+            .text {color: #636363; text-align: center; padding-top:20px; font-size:18px; display: none;}
         </style>
     </head>
     <body>
@@ -71,7 +71,7 @@
                                     <a class="download_app" href="itms-services://?action=download-manifest&url=https://download.uying.app/" title="点击下载iPhone安装包">
                                         下载安装
                                     </a>
-                                    <div class="text"></div>
+                                    <div class="text">已经开始下载，请返回桌面查看</div>
                                 </div>
 
                             </div>
@@ -172,30 +172,43 @@
   // document.write("你使用的浏览器是:" + navigator.Actual_Name + ",版本号:" + navigator.Actual_Version);
   if(navigator.Actual_Name == 'Safari'){
     var dom = document.getElementById('J-tip-change-bor');
-    dom.style.display = 'block';
+    dom.style.display = 'none';
     document.getElementById('J-button').style.display = 'none';
+      document.getElementById('ios-btn').style.display = 'block';
   }else if(navigator.Actual_Name != 'Safari'){
     var dom = document.getElementById('J-tip-change-bor');
     dom.style.display = 'none';
     document.getElementById('ios-btn').style.display = 'none';
     document.getElementById('J-button').style.display = 'block';
     setTimeout(function () {
-      document.getElementsByClassName('.text').innerHtml = "已经开始下载，请返回桌面查看";
+      document.getElementsByClassName('.text').style.display = 'block';
     }, 2000)
   }
 
-  function is_weixn(){
-    var ua = navigator.userAgent.toLowerCase();
-    if(ua.match(/MicroMessenger/i)=="micromessenger") {
+//   function is_weixn(){
+//     var ua = navigator.userAgent.toLowerCase();
+//     if(ua.match(/MicroMessenger/i)=="micromessenger") {
 //       var dom = document.getElementById('J-tip-change-bor');
 //       dom.style.display = 'block';
 //       document.getElementById('ios-btn').style.display = 'block';
 //       document.getElementById('J-button').style.display = 'none';
-        return true;
-    } else {
-      return false
+//         return true;
+//     } else {
+//       return false
+//     }
+//   }
+    
+ function get_broswer_info(){
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+      var dom = document.getElementById('J-tip-change-bor');
+      dom.style.display = 'block';
+      document.getElementById('ios-btn').style.display = 'block';
+      document.getElementById('J-button').style.display = 'none';
     }
-  }
+}
+get_broswer_info();   
+    
 </script>
         
 </body>
