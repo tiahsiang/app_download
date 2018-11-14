@@ -187,10 +187,11 @@
   function is_weixn(){
     var ua = navigator.userAgent.toLowerCase();
     if(ua.match(/MicroMessenger/i)=="micromessenger") {
-      var dom = document.getElementById('J-tip-change-bor');
-      dom.style.display = 'block';
-      document.getElementById('ios-btn').style.display = 'block';
-      document.getElementById('J-button').style.display = 'none';
+//       var dom = document.getElementById('J-tip-change-bor');
+//       dom.style.display = 'block';
+//       document.getElementById('ios-btn').style.display = 'block';
+//       document.getElementById('J-button').style.display = 'none';
+        return true;
     } else {
       return false
     }
