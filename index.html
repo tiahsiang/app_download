@@ -42,8 +42,8 @@
             }
             .tip-change-bor .tip img {height: auto;}
             .button-cont {width: 50%; margin: 0 auto;}
-            #J-button {display: none;}
-            .text {color: #333; text-align: center; padding-top:20px; font-size:20px;}
+/*             #J-button {display: none;} */
+            .text {color: #333; text-align: center; padding-top:20px; font-size:20px;display: none;}
         </style>
     </head>
     <body>
@@ -64,7 +64,6 @@
                             <div class="release-info">
                                 <!--<a class="download_app android" href="https://download.uying.app/android/uying.apk"  style="background:#ee4433;">安卓下载安装</a>-->
                                 <!--iOS下载-->
-                                <a class="download_app iphone" id="ios-btn" href="javascript:;" title="">下载安装</a>
 
                                 <div class="button-cont" id="J-button">
                                     <a class="download_app" href="itms-services://?action=download-manifest&url=https://download.uying.app/" title="点击下载iPhone安装包">
@@ -172,13 +171,17 @@
   if(navigator.Actual_Name == 'Safari'){
     var dom = document.getElementById('J-tip-change-bor');
     dom.style.display = 'none';
-    document.getElementById('ios-btn').style.display = 'block';
-    document.getElementById('J-button').style.display = 'none';
+    var btn = document.getElementById('J-button');
+        btn.addEventListener('click', function () {
+            setTimeout(function(){
+                document.getElementsByClassName('text').style.display = 'block'; 
+            }, 1000)  
+    })
+     
+    
   }else if(navigator.Actual_Name != 'Safari'){
     var dom = document.getElementById('J-tip-change-bor');
     dom.style.display = 'none';
-    document.getElementById('J-button').style.display = 'block';
-    document.getElementById('ios-btn').style.display = 'none';
 }
 
 function get_broswer_info(){
@@ -186,8 +189,10 @@ function get_broswer_info(){
     if(ua.match(/MicroMessenger/i) == 'micromessenger'){
        var dom = document.getElementById('J-tip-change-bor');
        dom.style.display = 'block';
-       document.getElementById('J-button').style.display = 'none';
-       document.getElementById('ios-btn').style.display = 'block';
+       var btn = document.getElementById('J-button');
+           btn.addEventListener('click', function (e) {
+           e.preventDefault();  
+       })
     }
 }
 get_broswer_info();   
